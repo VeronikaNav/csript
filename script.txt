@@ -1,0 +1,19 @@
+#!/bin/bash
+filter_element(){
+element=("$@")
+uniq=()
+for i in "${element[@]}"
+do
+if [[ ${#uniq[@]} -eq 0 || ! " ${uniq[*]} " =~ " ${i} " ]]
+then
+uniq+=("$i")
+fi
+done
+echo "${uniq[@]}"
+}
+if [ "$#" -eq 0 ]
+then
+echo "No element"
+fi
+result=$(filter_element "$@")
+echo "$result"
