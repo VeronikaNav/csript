@@ -4,7 +4,7 @@ element=("$@")
 uniq=()
 for i in "${element[@]}"
 do
-if [[ ${#uniq[@]} -eq 0 || ! " ${uniq[*]} " =~ " ${i} " ]]
+if [[ ${#uniq[@]} -eq 0 |! " ${uniq[*]} " =~ " ${i} " ]]
 then
 uniq+=("$i")
 fi
